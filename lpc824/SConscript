@@ -12,11 +12,11 @@ src += Glob('common/chip/*.c')
 
 # add for startup script
 if rtconfig.PLATFORM in ['gcc']:
-    src += [cwd + '/common/startup/gcc_startup_lpc82x.s']
+    src += ['common/startup/gcc_startup_lpc82x.s']
 elif rtconfig.PLATFORM in ['armcc', 'armclang']:
-    src += [cwd + '/common/startup/keil_startup_lpc82x.s']
+    src += ['common/startup/keil_startup_lpc82x.s']
 elif rtconfig.PLATFORM in ['iccarm']:
-    src += [cwd + '/common/startup/iar_startup_lpc82x.s']
+    src += ['common/startup/iar_startup_lpc82x.s']
 
 CPPPATH = [ cwd + '/peri_driver', cwd + '/common/board',
             cwd + '/common/chip', cwd + '/common/CMSIS']
